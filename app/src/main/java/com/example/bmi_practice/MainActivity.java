@@ -13,6 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText he;
     EditText we;
+
     public static Context context;
 
     @Override
@@ -33,16 +34,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String height = he.getText().toString();/**型別轉換(he)EditText>>String*/
         String weight = we.getText().toString();/**型別轉換(we)EditText>>String*/
         Bmi_method bmi_method = new Bmi_method();/**新增一個物件*/
+
         int judge = bmi_method.zero( weight, height );/**呼叫bmi_method.zero方法*/
+
         if (judge == 1) {
             Toast.makeText( MainActivity.this, "欄位空白，請重新輸入", Toast.LENGTH_SHORT ).show();
         } else if (judge == 2) {
             String a = bmi_method.compute( weight, height );/**呼叫bmi_method.compute方法*/
             TextView text_bmi = findViewById( R.id.text_bmi );
-            text_bmi.setText(a);
-            String b = bmi_method.result ( weight, height );/**呼叫**BMI診斷結果方法*/
+            text_bmi.setText( a );
+            String b = bmi_method.result( a );/**呼叫**BMI診斷結果方法*/
             TextView text_result = findViewById( R.id.text_result );
-            text_result.setText(b);
+            text_result.setText( b );
 
         }
     }

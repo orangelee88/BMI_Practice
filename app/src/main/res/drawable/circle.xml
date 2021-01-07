@@ -11,7 +11,7 @@
         android:shape="ring"
         android:useLevel="false">
         <gradient
-            android:startColor="#03A9F4"
+            android:startColor="#2CA7DF"
             android:endColor="#EBEEEF"
             android:type="sweep" />
         <stroke
